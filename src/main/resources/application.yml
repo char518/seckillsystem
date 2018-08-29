@@ -1,0 +1,13 @@
+server:
+  port: 8088
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: create
+  datasource:
+    url: jdbc:mysql://localhost:3306/seckill
+    username: root
+    password: 7753677
+  redis:
+    host: localhost
+    port: 6379

@@ -1,6 +1,6 @@
 package com.charl.seckill.service;
 
-import com.charl.seckill.entity.Goods;
+import com.charl.seckill.entity.Sku;
 
 /**
  * @program: seckill
@@ -10,6 +10,10 @@ import com.charl.seckill.entity.Goods;
  **/
 public interface IProductService {
 
-    Goods queryGoodById(Integer id);
+    Sku queryGoodById(Integer id);
+
+    int addGood(Sku goods);
+
+    int updateGoods(Sku goods);
 
 }

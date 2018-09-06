@@ -1,6 +1,6 @@
 package com.charl.seckill.controller;
 
-import com.charl.seckill.entity.Goods;
+import com.charl.seckill.entity.Sku;
 import com.charl.seckill.service.IProductService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -24,8 +24,8 @@ public class SeckillController {
 
     @PostMapping(value = "/seckill/getProductById")
     @ApiOperation(value = "根据id查询商品信息")
-    public Goods getProductById(@RequestBody Integer id) {
-        Goods goods = productService.queryGoodById(id);
+    public Sku getProductById(@RequestBody Integer id) {
+        Sku goods = productService.queryGoodById(id);
         return goods;
     }
 

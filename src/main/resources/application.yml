@@ -9,5 +9,5 @@ spring:
     username: root
     password: 7753677
   redis:
-    host: localhost
+    host: 192.168.65.128
     port: 6379

@@ -1,9 +1,10 @@
 package com.charl.seckill.service.impl;
 
-import com.charl.seckill.dao.GoodsRepository;
-import com.charl.seckill.entity.Goods;
+import com.charl.seckill.dao.SkuRepository;
+import com.charl.seckill.entity.Sku;
 import com.charl.seckill.service.IProductService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -18,16 +19,31 @@ import java.util.Optional;
 public class ProductService implements IProductService {
 
     @Autowired
-    private GoodsRepository goodsRepository;
+    private SkuRepository goodsRepository;
+
+    @Autowired
+    private RedisTemplate redisTemplate;
 
     @Override
-    public Goods queryGoodById(Integer id) {
+    public Sku queryGoodById(Integer id) {
 
-        Optional<Goods> byId = goodsRepository.findById(id);
+        Optional<Sku> byId = goodsRepository.findById(id);
 
         if (byId.isPresent()) {
             return byId.get();
         }
         return null;
+    }
+
+    @Override
+    public int addGood(Sku goods) {
+        Sku save = goodsRepository.save(goods);
+        return 1;
+    }
+
+    @Override
+    public int updateGoods(Sku goods) {
+        Sku save = goodsRepository.save(goods);
+        return 1;
     }
 }

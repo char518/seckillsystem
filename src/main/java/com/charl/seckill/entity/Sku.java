@@ -17,28 +17,50 @@ import java.util.Date;
  **/
 @Entity
 @Data
-public class Goods {
+public class Sku {
 
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Integer id;
 
+    /**
+     * 名称
+     */
     private String name;
 
+    /**
+     * 图片
+     */
     private String image;
 
+    /**
+     * 描述
+     */
+    private String desc;
+
+    /**
+     * 原价
+     */
     private BigDecimal originPrice;
 
+    /**
+     * 售价
+     */
     private BigDecimal sellPrice;
 
-    private Integer stock;
+    /**
+     * 状态：0.下架 1.上架
+     */
+    private Integer state;
 
-    private Integer userId;
+    /**
+     * 添加时间
+     */
+    private Date addTime;
 
-    private Date createTime;
-
+    /**
+     * 更新时间
+     */
     private Date updateTime;
-
-    private Integer delFlag;
 
 }

@@ -1,7 +1,8 @@
 package com.charl.seckill.dao;
 
-import com.charl.seckill.entity.Goods;
+import com.charl.seckill.entity.Sku;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -11,5 +12,5 @@ import org.springframework.stereotype.Repository;
  * @create: 2018-08-27 15:18
  **/
 @Repository
-public interface GoodsRepository extends JpaRepository<Goods, Integer> {
+public interface SkuRepository extends JpaRepository<Sku, Integer>,JpaSpecificationExecutor<Sku> {
 }
